@@ -75,6 +75,13 @@ var UserSchema = new Schema({
 		}],
 		default: ['user']
 	},
+	favouriteRestaurants:{
+
+	},
+	crumbsBalance: {
+		type: Number,
+		default: 0.0
+	},
 	updated: {
 		type: Date
 	},
