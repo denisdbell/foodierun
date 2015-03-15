@@ -35,6 +35,11 @@ var RestaurantSchema = new Schema({
 		town: String,
 		parish: String
 	},
+	menuItem: [{
+		name: Number,
+		options: [name:String,price:Number],
+		price: Number
+	}],
 	phoneNumbers: [String],
 	email: {
 		type: String,
@@ -43,6 +48,9 @@ var RestaurantSchema = new Schema({
 		required: 'Please fill in your email',
 		match: [/.+\@.+\..+/, 'Please fill a valid email address']
 	},
+	user: {
+		type: {type:Schema.ObjectId, ref: 'User'},
+	}
 });
 
 mongoose.model('Restaurant', RestaurantSchema);
