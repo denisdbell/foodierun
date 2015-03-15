@@ -3,6 +3,7 @@
         <h1>New Restaurant</h1>
     </div>
     <div class="col-md-12">
+      <h2>General Details</h2>
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group">
@@ -23,22 +24,64 @@
                         <input type="text" data-ng-model="logo" id="logo" class="form-control" placeholder="Slogan" required>
                     </div>
                 </div>
+
+                <h2>Contact Details</h2>
                 <div class="form-group">
-                    <label class="control-label" for="address">Address</label>
+                    <label class="control-label" for="address">Street</label>
                     <div class="controls">
                         <input type="text" data-ng-model="address.street" id="address.street" class="form-control" placeholder="Street" required>
                     </div>
+                    <label class="control-label" for="address">Town</label>
                     <div class="controls">
+                        <!--
                         <input type="text" data-ng-model="address.town" id="address.town" class="form-control" placeholder="Town" required>
+                      -->
+                        <select id="address.town" data-ng-model="address.town" class="form-control" required>
+                          <option>Constant Spring</option>
+                          <option>Gordon Town	</option>
+                          <option>Mavis Bank	</option>
+                          <option>Stony Hill	</option>
+                          <option>Barbican	</option>
+                          <option>Denham Town	</option>
+                          <option>Red Hills	</option>
+                          <option>Stony Hill	</option>
+                          <option>Havendale	</option>
+                          <option>Forest Garden	</option>
+                          <option>Forest Mona	</option>
+                          <option>Duhane Park	</option>
+                          <option>Queen Hill</option>
+                        </select>
+
                     </div>
+
+                    <label class="control-label" for="address">Parish</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="address.parish" id="address.parish" class="form-control" placeholder="Parish" required>
+                        <select id="address.parish" data-ng-model="address.parish" class="form-control" required>
+                          <option default>Select A Parish</option>
+                          <option>Kingston</option>
+                          <option>Saint James</option>
+                          <option>Trelawny	</option>
+                          <option>Clarendon		</option>
+                          <option>Manchester		</option>
+                          <option>Saint Ann		</option>
+                          <option>Saint Catherine	</option>
+                          <option>Saint Mary		</option>
+                          <option>Portland	</option>
+                          <option>Saint Andrew</option>
+                          <option>Saint Thomas</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="phoneNumbers">Phone Numbers</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="phoneNumbers" id="phoneNumbers" class="form-control" placeholder="Phone Numbers" required>
+                        <input type="text" data-ng-model="phoneNumbers[0]" id="phoneNumbers1" class="form-control" placeholder="Phone Numbers" required>
+                    </div>
+                    <div class="controls">
+                        <input type="text" data-ng-model="phoneNumbers[1]" id="phoneNumbers2" class="form-control" placeholder="Phone Numbers" required>
+                    </div>
+                    <div class="controls">
+                        <input type="text" data-ng-model="phoneNumbers[2]" id="phoneNumbers3" class="form-control" placeholder="Phone Numbers" required>
                     </div>
                 </div>
                 <div class="form-group">
