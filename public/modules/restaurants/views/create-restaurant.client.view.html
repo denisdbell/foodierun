@@ -1,0 +1,59 @@
+<section data-ng-controller="RestaurantsController">
+    <div class="page-header">
+        <h1>New Restaurant</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="slogan">Slogan</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="slogan" id="slogan" class="form-control" placeholder="Slogan" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="logo">Logo</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="logo" id="logo" class="form-control" placeholder="Slogan" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="address">Address</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="address.street" id="address.street" class="form-control" placeholder="Street" required>
+                    </div>
+                    <div class="controls">
+                        <input type="text" data-ng-model="address.town" id="address.town" class="form-control" placeholder="Town" required>
+                    </div>
+                    <div class="controls">
+                        <input type="text" data-ng-model="address.parish" id="address.parish" class="form-control" placeholder="Parish" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="phoneNumbers">Phone Numbers</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="phoneNumbers" id="phoneNumbers" class="form-control" placeholder="Phone Numbers" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="email" id="email" class="form-control" placeholder="Email address" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

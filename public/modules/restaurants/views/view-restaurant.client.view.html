@@ -1,0 +1,75 @@
+<section data-ng-controller="RestaurantsController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="restaurant.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == restaurant.user._id))">
+		<a class="btn btn-primary" href="/#!/restaurants/{{restaurant._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="restaurant.created | date:'mediumDate'"></span>
+			by
+		</em>
+			<div class="row">
+				<div  class="col-sm-6">
+					<label>Name:</label>
+				</div>
+				<div  class="col-sm-6">
+					<span data-ng-bind="restaurant.name"></span>
+				</div>
+			</div>
+
+			<div  class="row">
+				<div class="col-sm-6">
+					<label>Slogan:</label>
+				</div>
+				<div  class="col-sm-6">
+					<span data-ng-bind="restaurant.slogan"></span>
+				</div>
+			</div>
+
+			<div  class="row">
+				<div class="col-sm-6">
+					<label>Logo:</label>
+				</div>
+				<div  class="col-sm-6">
+					<span data-ng-bind="restaurant.logo"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div  class="col-sm-6">
+					<label>Address:</label>
+				</div>
+				<div  class="col-sm-6">
+					<span data-ng-bind="restaurant.address.street"></span>,
+					<span data-ng-bind="restaurant.address.town"></span>,
+					<span data-ng-bind="restaurant.address.parish"></span>,
+				</div>
+			</div>
+
+			<div class="row">
+				<div  class="col-sm-6">
+					<label>Phone Number(s):</label>
+				</div>
+				<div  class="col-sm-6">
+					<span data-ng-bind="restaurant.phoneNumbers"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<label>Email:</label>
+				</div>
+				<div  class="col-sm-6">
+					<span data-ng-bind="restaurant.email"></span>
+				</div>
+			</div>
+	</small>
+</section>
