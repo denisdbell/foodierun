@@ -2,6 +2,7 @@
 
 module.exports = {
 	db: 'mongodb://denisdbell:denis94bit@ds033107.mongolab.com:33107/foodierundb',
+	//db: 'mongodb://localhost/mean-test',
 	app: {
 		title: 'MEAN - Development Environment'
 	},

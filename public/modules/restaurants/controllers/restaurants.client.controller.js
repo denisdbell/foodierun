@@ -4,6 +4,8 @@
 angular.module('restaurants').controller('RestaurantsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Restaurants',
 	function($scope, $stateParams, $location, Authentication, Restaurants) {
 		$scope.authentication = Authentication;
+		$scope.phoneNumbers = [""];
+		$scope.menuItems = [{name:'', itemOptions:[{name:'',price:0.0}], price:0.0}];
 
 		// Create new Restaurant
 		$scope.create = function() {
@@ -13,7 +15,8 @@ angular.module('restaurants').controller('RestaurantsController', ['$scope', '$s
 				slogan: this.slogan,
 				logo: this.logo,
 				address: this.address,
-				phoneNumbers: this.phoneNumbers,
+				phoneNumbers: $scope.phoneNumbers,
+				menuItems: $scope.menuItems,
 				email: this.email
 			});
 
@@ -67,5 +70,51 @@ angular.module('restaurants').controller('RestaurantsController', ['$scope', '$s
 				restaurantId: $stateParams.restaurantId
 			});
 		};
+
+		//Add phone number
+		$scope.addPhoneNumber = function(phoneNumber,index){
+				$scope.phoneNumbers[index] = phoneNumber;
+				$scope.phoneNumbers.push('');
+		}
+
+		//Remove phone number
+		$scope.removePhoneNumber = function(index){
+			if(	$scope.phoneNumbers.length > 1 ){
+				$scope.phoneNumbers.splice(index, 1);
+			}
+
+		}
+
+		//Add Menu Item
+		$scope.addMenuItem = function(name,itemOptions,price,index){
+
+				var menuItem = {'name':name,'itemOptions':itemOptions,'price':price};
+
+				$scope.menuItems[index] = menuItem;
+				$scope.menuItems.push({name:'', itemOptions:[{name:'',price:0.0}], price:0.0});
+		}
+
+		//Remove Menu Item
+		$scope.removeMenuItem = function(index){
+			if(	$scope.menuItems.length > 1 ){
+				$scope.menuItems.splice(index, 1);
+			}
+
+		}
+
+		//Add Menu Item
+		$scope.addItemOption = function(name,price,parentIndex,index){
+				var itemOption = {'name':name,'price':price};
+				$scope.menuItems[parentIndex].itemOptions[index] = itemOption;
+				$scope.menuItems[parentIndex].itemOptions.push({name:'',price:0.0});
+		}
+
+		//Remove Menu Item
+		$scope.removeItemOption = function(parentIndex,index){
+			if(	$scope.menuItems[parentIndex].itemOptions.length > 1 ){
+					$scope.menuItems[parentIndex].itemOptions.splice(index, 1);
+			}
+			console.log($scope.menuItems[parentIndex].itemOptions);
+		}
 	}
 ]);

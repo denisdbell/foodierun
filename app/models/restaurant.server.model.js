@@ -37,7 +37,7 @@ var RestaurantSchema = new Schema({
 	},
 	menuItem: [{
 		name: Number,
-		options: [name:String,price:Number],
+		itemOptions: [{name:String,price:Number}],
 		price: Number
 	}],
 	phoneNumbers: [String],

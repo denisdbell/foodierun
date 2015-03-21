@@ -159,5 +159,14 @@
 			// Test array after successful delete
 			expect(scope.restaurants.length).toBe(0);
 		}));
+
+		it('$scope.addPhoneNumnbers should add element the $scope.phoneNumnbers ', inject(function(Restaurants) {
+
+			//Add new phoneNumber
+			scope.addPhoneNumbers('123-123-1231');
+			// Test array after successful delete
+			expect(scope.phoneNumnbers.length).toBe(1);
+		}));
+
 	});
 }());
